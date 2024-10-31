@@ -50,8 +50,8 @@ const Footer = () => {
 
   return (
     <footer className='flex flex-col md:h-[20%]'>
-        <input minLength={1} maxLength={70} placeholder='Type something' type='text' onKeyDown={handleEnterPress} className={`mb-3 border-2 my-3 h-12 px-4 py-2 rounded-2xl outline-none ${inputErrorState ? "border-red-400 animate-pulse" : ""}`} value={taskDescInput} onChange={(e) => {setTaskDescInput(e.target.value)}} />
-        <button className='bg-slate-800 text-gray-200 h-10 rounded-xl' onClick={addTaskHandler}>Add Task</button>
+        <input data-testid="task-desc-input" minLength={1} maxLength={70} placeholder='Type something' type='text' onKeyDown={handleEnterPress} className={`mb-3 border-2 my-3 h-12 px-4 py-2 rounded-2xl outline-none ${inputErrorState ? "border-red-400 animate-pulse" : ""}`} value={taskDescInput} onChange={(e) => {setTaskDescInput(e.target.value)}} />
+        <button data-testid="add-task-cta" className='bg-slate-800 text-gray-200 h-10 rounded-xl' onClick={addTaskHandler}>Add Task</button>
     </footer>
   )
 }

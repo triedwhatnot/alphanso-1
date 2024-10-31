@@ -1,3 +1,4 @@
+/* v8 ignore start */
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -9,3 +10,4 @@ export default {
   },
   plugins: [],
 }
+/* v8 ignore end */

@@ -114,16 +114,16 @@ const TaskListing = ({tasksList, searchQuery, filter}) => {
     }, [showUndoUI]);
 
     return (
-        <div className={`rounded-2xl flex items-center border-[1.5px] my-3 min-h-12 px-4 py-2 w-[100%] ${status === TASK_STATUS.COMPLETED.id && !showUndoUI ? "bg-[#ddf0d29c] border-[#8ed3a7]" : ""}`}>
+        <div data-testid="task-el-parent" className={`rounded-2xl flex items-center border-[1.5px] my-3 min-h-12 px-4 py-2 w-[100%] ${status === TASK_STATUS.COMPLETED.id && !showUndoUI ? "bg-[#ddf0d29c] border-[#8ed3a7]" : ""}`}>
             {
                 showUndoUI 
                 ? 
                 <div className='cursor-pointer text-red-400' onClick={handleUndoDeletion}>Undo</div>
                 :
                 <>
-                    <img src={status === TASK_STATUS.COMPLETED.id ? completedIcon : pendingIcon} alt='task completion status' className='basis-[3%] h-[25px] mr-2  cursor-pointer' onClick={handleStatusToggle} />
-                    <div className='basis-[94%] '>{capitalizeFirstLetter(description)}</div>
-                    <img src={crossIcon} alt='delete task icon' className='basis-[3%] h-[25px] relative right-0 cursor-pointer' onClick={handleDelete} />
+                    <img data-testid="task-el-status" data-status={status} src={status === TASK_STATUS.COMPLETED.id ? completedIcon : pendingIcon} alt='task completion status' className='basis-[3%] h-[25px] mr-2  cursor-pointer' onClick={handleStatusToggle} />
+                    <div data-testid="task-el-desc" className='basis-[94%] '>{capitalizeFirstLetter(description)}</div>
+                    <img data-testid="task-el-delete" src={crossIcon} alt='delete task icon' className='basis-[3%] h-[25px] relative right-0 cursor-pointer' onClick={handleDelete} />
                 </>
             }
         </div>
@@ -132,7 +132,7 @@ const TaskListing = ({tasksList, searchQuery, filter}) => {
 
 const TaskZeroState = ({}) => {
     return (
-        <div className={`text-center flex justify-center items-center border-0 my-3 px-4 py-10 w-[100%]`}>
+        <div data-testid="task-zero-state" className={`text-center flex justify-center items-center border-0 my-3 px-4 py-10 w-[100%]`}>
             Welcome! Start by adding your first task!
         </div>
     )
