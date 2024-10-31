@@ -18,7 +18,7 @@
     - Tasks sorting order : Newly added tasks are added on the top of the list and "pending" tasks are listed above "completed" tasks.
     - A "zeroth" state appears in case no tasks have been added in the app
 2. Undo deletion operation of task within a window of 3 secs.
-3. Filter on the basis of task status: completed or pending ow list all.
+3. Filter on the basis of task status: completed or pending or simply, list all.
 4. Search tasks on the basis of their description and even filter them on the basis of completion status.
     - Debouncing have been added, so as to limit the rate of filtering logic execution.
 5. LocalStorage has been used to persist the data.
