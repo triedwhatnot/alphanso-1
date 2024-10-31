@@ -23,3 +23,10 @@
     - Debouncing have been added, so as to limit the rate of filtering logic execution.
 5. LocalStorage has been used to persist the data.
 6. Test cases have been implemented to test app's usability with code coverage greater than 90%.
+
+## Tech Stack
+1. React
+2. Tailwind CSS
+3. React's Context API for state management
+4. React Testing Library, Vitest (similar to Jest), JS-DOM, Jest-DOM
+5. Vite
